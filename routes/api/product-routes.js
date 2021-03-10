@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
       // be sure to include its associated Category and Tag data
       include: [
         { model: Category },
-        { model: Tag, through: ProductTag, as: "product" },
+        { model: Tag, through: ProductTag, as: "tags" },
       ],
     });
     res.status(200).json(productData);
@@ -28,7 +28,7 @@ router.get("/:id", async (req, res) => {
       // be sure to include its associated Category and Tag data
       include: [
         { model: Category },
-        { model: Tag, through: ProductTag, as: "product" },
+        { model: Tag, through: ProductTag, as: "tags" },
       ],
     });
     res.status(200).json(productData);
